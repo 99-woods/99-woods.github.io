@@ -145,6 +145,85 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/29/%E5%88%9D%E8%AF%86%E5%BE%AE%E7%A7%AF%E5%88%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/myavatar.jpg">
+      <meta itemprop="name" content="99_wood">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="99_wood's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/29/%E5%88%9D%E8%AF%86%E5%BE%AE%E7%A7%AF%E5%88%86/" class="post-title-link" itemprop="url">初始微积分</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-29 11:47:45 / 修改时间：13:48:06" itemprop="dateCreated datePublished" datetime="2020-02-29T11:47:45+08:00">2020-02-29</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+<h1 id="初识微积分"><a href="#初识微积分" class="headerlink" title="初识微积分"></a>初识微积分</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>寒假开始几天不想写作业<del>后面也不想写</del>，闲暇之时看了看<a href="https://space.bilibili.com/9458053?from=search&seid=10946562271097898825" target="_blank" rel="noopener">李永乐老师</a>和<a href="https://space.bilibili.com/88461692?from=search&seid=8771060376994081753" target="_blank" rel="noopener">3Blue1Brown</a>的关于微积分的视频，便一发不可收拾。所以把这几天学到的知识怕忘了写个随笔。</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>微积分就是对一个问题进行连续微分后计算再求解整个问题的方法。</p>
+<blockquote>
+<p>微积分学（Calculus，在拉丁语中意为计数用的小石头） 是研究极限、微分学、积分学和无穷级数等的一个数学分支，并成为了现代大学教育的重要组成部分。历史上，微积分曾经指无穷小的计算。更本质的讲，微积分学是一门研究变化的学问。<br>——维基百科 <a href="https://zh.wikipedia.org/zh-hans/%E5%BE%AE%E7%A7%AF%E5%88%86%E5%AD%A6" target="_blank" rel="noopener">微积分学</a></p>
+</blockquote>
+<h2 id="问题导入"><a href="#问题导入" class="headerlink" title="问题导入"></a>问题导入</h2><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>有这样一个v-t图像（如图表1）。求3s行驶的距离。</p>
+<p><img src="https://img2018.cnblogs.com/blog/1490851/202002/1490851-20200201212318996-1229169991.png" alt="图表1"></p>
+<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p><img src="1.png" alt="图表1"></p>
+<ul>
+<li>由图可知这是一个匀加速运动。</li>
+<li>可以将其想象为多个匀速直线运动如图表2。此时3s内路程s=0<em>1+2</em>1+4*1=6(m)</li>
+<li>增加长条段数如图表3。此时3s内路程s=0<em>0.5+1</em>0.5+2<em>0.5+3</em>0.5+4<em>0.5+5</em>0.5=7.5(m)</li>
+<li>以此类推，可以发现s=长条组成的面积（如图表4）s=6*3/2=9(m)</li>
+</ul>
+<h2 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h2><p>以上这个问题求解的方法就是利用了微积分的思想。把求整个路程的问题化为求的多个可以求解的问题再求和求解整个问题。这一过程用微积分表示就是</p>
+<p>$$\int_0^3 v(t)dt$$</p>
+<h2 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h2><p>其中 \(\int_0^3 v(t)dt\) 表示从0到3积分，可以理解为让t的值由0变化到3，并把每次后面的式子 的值求和。v(t)是速度v关于时间t的函数，这里是时间为t时速度v的值。dt表示时间t的无限小量。整个式子的含义就是从0到3积分，将此时速度v(t)乘无限小的时间dt。dt在整个图像上就表示长条再t轴上的长度，取无限小后的图像就是图表4。<br>数学上，这一积分就叫做定积分。这一式子表示的是函数v(t)在0≤t≤3时函数图像与t轴之间的面积。由于数学中更常见的直角坐标系是x-y坐标系所以定积分更常见的式子是</p>
+<p>$$\int f(x)dx$$</p>
+<p>其图形意义就是函数f(x)图像与t轴之间的面积（如图表5）。值等于S蓝+S粉-S绿</p>
+<p><img src="https://img2018.cnblogs.com/blog/1490851/202002/1490851-20200201212320347-842064787.png" alt=""></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/28/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -280,9 +359,13 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>
