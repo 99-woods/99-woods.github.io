@@ -22,13 +22,13 @@
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="99_wood&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/%E6%95%B0%E5%AD%A6/index.html">
+<meta property="og:url" content="http://yoursite.com/categories/Math/index.html">
 <meta property="og:site_name" content="99_wood&#39;s blog">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="99_wood">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/tags/%E6%95%B0%E5%AD%A6/">
+<link rel="canonical" href="http://yoursite.com/categories/Math/">
 
 
 <script id="page-configurations">
@@ -40,7 +40,7 @@
   };
 </script>
 
-  <title>标签: 数学 | 99_wood's blog</title>
+  <title>分类: Math | 99_wood's blog</title>
   
 
 
@@ -119,6 +119,11 @@
     <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
 
   </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
@@ -151,8 +156,8 @@
   <div class="post-block">
     <div class="posts-collapse">
       <div class="collection-title">
-        <h1 class="collection-header">数学
-          <small>标签</small>
+        <h1 class="collection-header">Math
+          <small>分类</small>
         </h1>
       </div>
 
@@ -258,6 +263,12 @@
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
@@ -348,6 +359,35 @@
   
 
   
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'kR5HnzDif3BLArhvtNvi5nnP-gzGzoHsz',
+      appKey     : 'g9IXkE0N6kAmnfOgQOpmIihL',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
 
 </body>
 </html>
