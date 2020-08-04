@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/GoodCode/index.html</loc>
+    
+    <lastmod>2020-08-04T07:56:38.723Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/08/04/test/</loc>
     
     <lastmod>2020-08-03T23:21:17.060Z</lastmod>
