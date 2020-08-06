@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/08/06/Codeforces-Round-661-Div-3/</loc>
+    
+    <lastmod>2020-08-06T11:59:17.873Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/08/06/CF1399D-Binary-String-To-Subsequences/</loc>
     
     <lastmod>2020-08-06T11:39:39.395Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://yoursite.com/2020/08/06/CF1399C-Boats-Competition/</loc>
     
     <lastmod>2020-08-06T10:16:50.942Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/08/06/Codeforces-Round-661-Div-3/</loc>
-    
-    <lastmod>2020-08-06T04:11:05.722Z</lastmod>
     
   </url>
   
