@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://yoursite.com/2020/08/06/Codeforces-Round-661-Div-3/</loc>
+    <loc>http://yoursite.com/2020/08/06/CF1399D-Binary-String-To-Subsequences/</loc>
     <lastmod>2020-08-06</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/07/26/P1486-%E9%BB%91%E6%9A%97%E5%9F%8E%E5%A0%A1/</loc>
-    <lastmod>2020-08-05</lastmod>
+    <lastmod>2020-08-06</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/08/06/CF1399B-Gifts-Fixing/</loc>
+    <lastmod>2020-08-06</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/08/06/CF1399A-Remove-Smallest/</loc>
+    <lastmod>2020-08-06</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/08/06/CF1399C-Boats-Competition/</loc>
+    <lastmod>2020-08-06</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2020/08/06/Codeforces-Round-661-Div-3/</loc>
+    <lastmod>2020-08-06</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2020/02/29/%E5%88%9D%E8%AF%86%E5%BE%AE%E7%A7%AF%E5%88%86/</loc>
     <lastmod>2020-08-05</lastmod>

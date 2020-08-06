@@ -152,6 +152,459 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/06/CF1399D-Binary-String-To-Subsequences/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/myavatar.jpg">
+      <meta itemprop="name" content="99_wood">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="99_wood's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/06/CF1399D-Binary-String-To-Subsequences/" class="post-title-link" itemprop="url">CF1399D Binary String To Subsequences</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-06 18:17:11 / 修改时间：19:39:39" itemprop="dateCreated datePublished" datetime="2020-08-06T18:17:11+08:00">2020-08-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97/" itemprop="url" rel="index"><span itemprop="name">队列</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/08/06/CF1399D-Binary-String-To-Subsequences/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/06/CF1399D-Binary-String-To-Subsequences/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><pre><code>D. Binary String To Subsequences
+time limit per test2 seconds
+memory limit per test256 megabytes
+inputstandard input
+outputstandard output
+You are given a binary string s consisting of n zeros and ones.
+
+Your task is to divide the given string into the minimum number of subsequences in such a way that each character of the string belongs to exactly one subsequence and each subsequence looks like &quot;010101 ...&quot; or &quot;101010 ...&quot; (i.e. the subsequence should not contain two adjacent zeros or ones).
+
+Recall that a subsequence is a sequence that can be derived from the given sequence by deleting zero or more elements without changing the order of the remaining elements. For example, subsequences of &quot;1011101&quot; are &quot;0&quot;, &quot;1&quot;, &quot;11111&quot;, &quot;0111&quot;, &quot;101&quot;, &quot;1001&quot;, but not &quot;000&quot;, &quot;101010&quot; and &quot;11100&quot;.
+
+You have to answer t independent test cases.
+
+Input
+The first line of the input contains one integer t (1≤t≤2⋅104) — the number of test cases. Then t test cases follow.
+
+The first line of the test case contains one integer n (1≤n≤2⋅105) — the length of s. The second line of the test case contains n characters &apos;0&apos; and &apos;1&apos; — the string s.
+
+It is guaranteed that the sum of n does not exceed 2⋅105 (∑n≤2⋅105).
+
+Output
+For each test case, print the answer: in the first line print one integer k (1≤k≤n) — the minimum number of subsequences you can divide the string s to. In the second line print n integers a1,a2,…,an (1≤ai≤k), where ai is the number of subsequence the i-th character of s belongs to.
+
+If there are several answers, you can print any.
+
+Example
+inputCopy
+4
+4
+0011
+6
+111111
+5
+10101
+8
+01010000
+outputCopy
+2
+1 2 2 1 
+6
+1 2 3 4 5 6 
+1
+1 1 1 1 1 
+4
+1 1 1 1 1 2 3 4 </code></pre><h2 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h2><p><a href="https://fanyi.baidu.com/?aldtype=16047#en/zh/D.%20Binary%20String%20To%20Subsequences%0Atime%20limit%20per%20test2%20seconds%0Amemory%20limit%20per%20test256%20megabytes%0Ainputstandard%20input%0Aoutputstandard%20output%0AYou%20are%20given%20a%20binary%20string%20s%20consisting%20of%20n%20zeros%20and%20ones.%0A%0AYour%20task%20is%20to%20divide%20the%20given%20string%20into%20the%20minimum%20number%20of%20subsequences%20in%20such%20a%20way%20that%20each%20character%20of%20the%20string%20belongs%20to%20exactly%20one%20subsequence%20and%20each%20subsequence%20looks%20like%20%22010101%20...%22%20or%20%22101010%20...%22%20(i.e.%20the%20subsequence%20should%20not%20contain%20two%20adjacent%20zeros%20or%20ones).%0A%0ARecall%20that%20a%20subsequence%20is%20a%20sequence%20that%20can%20be%20derived%20from%20the%20given%20sequence%20by%20deleting%20zero%20or%20more%20elements%20without%20changing%20the%20order%20of%20the%20remaining%20elements.%20For%20example%2C%20subsequences%20of%20%221011101%22%20are%20%220%22%2C%20%221%22%2C%20%2211111%22%2C%20%220111%22%2C%20%22101%22%2C%20%221001%22%2C%20but%20not%20%22000%22%2C%20%22101010%22%20and%20%2211100%22.%0A%0AYou%20have%20to%20answer%20t%20independent%20test%20cases." target="_blank" rel="noopener">百度翻译结果</a><br><a href="https://fanyi.baidu.com/?aldtype=16047#en/zh/Input%0AThe%20first%20line%20of%20the%20input%20contains%20one%20integer%20t%20(1%E2%89%A4t%E2%89%A42%E2%8B%85104)%20%E2%80%94%20the%20number%20of%20test%20cases.%20Then%20t%20test%20cases%20follow.%0A%0AThe%20first%20line%20of%20the%20test%20case%20contains%20one%20integer%20n%20(1%E2%89%A4n%E2%89%A42%E2%8B%85105)%20%E2%80%94%20the%20length%20of%20s.%20The%20second%20line%20of%20the%20test%20case%20contains%20n%20characters%20' target="_blank" rel="noopener"0'%20and%20'1'%20%E2%80%94%20the%20string%20s.%0A%0AIt%20is%20guaranteed%20that%20the%20sum%20of%20n%20does%20not%20exceed%202%E2%8B%85105%20(%E2%88%91n%E2%89%A42%E2%8B%85105).%0A%0AOutput%0AFor%20each%20test%20case%2C%20print%20the%20answer%3A%20in%20the%20first%20line%20print%20one%20integer%20k%20(1%E2%89%A4k%E2%89%A4n)%20%E2%80%94%20the%20minimum%20number%20of%20subsequences%20you%20can%20divide%20the%20string%20s%20to.%20In%20the%20second%20line%20print%20n%20integers%20a1%2Ca2%2C%E2%80%A6%2Can%20(1%E2%89%A4ai%E2%89%A4k)%2C%20where%20ai%20is%20the%20number%20of%20subsequence%20the%20i-th%20character%20of%20s%20belongs%20to.%0A%0AIf%20there%20are%20several%20answers%2C%20you%20can%20print%20any.%0A%0AExample%0AinputCopy%0A4%0A4%0A0011%0A6%0A111111%0A5%0A10101%0A8%0A01010000%0AoutputCopy%0A2%0A1%202%202%201%20%0A6%0A1%202%203%204%205%206%20%0A1%0A1%201%201%201%201%20%0A4%0A1%201%201%201%201%202%203%204">百度翻译结果</a></p>
+<h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><p>我们发现对于任意si，加入已有子序列bj的唯一要求就是si!=bj[end]。所以我们只需存储目前所有的bj[end]记为bj，对于任意si，遍历各个子序列结尾bj。若si!=bj，则加入；若所有子序列bj==si，则新建一个序列放入。最后结果为序列数</p>
+<h2 id="代码一（TLE）"><a href="#代码一（TLE）" class="headerlink" title="代码一（TLE）"></a>代码一（TLE）</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">200010</span>];</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">200010</span>];</span><br><span class="line"><span class="keyword">int</span> b[<span class="number">200010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">	<span class="keyword">while</span>(t--)&#123;</span><br><span class="line">		<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">		<span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line">		<span class="keyword">int</span> n;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"\n%s"</span>,s);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">			a[i]=s[i]-<span class="string">'0'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">			<span class="keyword">bool</span> flag=<span class="literal">true</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=ans;++j)&#123;</span><br><span class="line">				<span class="keyword">if</span>(a[i]!=b[j])&#123;</span><br><span class="line">					a[i]=j;</span><br><span class="line">					flag=<span class="literal">false</span>;</span><br><span class="line">					b[j]+=<span class="number">1</span>;</span><br><span class="line">					b[j]%=<span class="number">2</span>;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(flag)&#123;</span><br><span class="line">				++ans;</span><br><span class="line">				b[ans]=a[i];</span><br><span class="line">				a[i]=ans;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//	freopen("data.in","r",stdin);</span></span><br><span class="line"><span class="comment">//	freopen("test.out","w",stdout);</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><p>我们发现超时的原因主要在于搜索可放入序列bj过程耗时过多，最坏情况所有bj!=ai,时间复杂度将退化到O(n^2).由于sum(n)&lt;=2*10^5，最坏情况下t=0，n=200000，时间复杂度为O(200000^2)。显然超时。</p>
+<p>针对搜索可放入序列bj过程耗时过多，我们发现用两个数组一个存结尾为0，另一个存结尾为1。每次只需判断数组是否空即可。若不空，则加入序列，并将该序列移至另一数组，否则新建一个序列。进一步思考发现若将数组换位队列将更好操作，于是有了下面这份代码，简单观察可知时间复杂度为O(sum(n))，效率很高。</p>
+<h2 id="代码二"><a href="#代码二" class="headerlink" title="代码二"></a>代码二</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">200010</span>];</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">200010</span>];</span><br><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt;b0;</span><br><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt;b1;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">	<span class="keyword">while</span>(t--)&#123;</span><br><span class="line">		<span class="keyword">while</span>(!b0.empty())&#123;</span><br><span class="line">			b0.pop();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">while</span>(!b1.empty())&#123;</span><br><span class="line">			b1.pop();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">		<span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line">		<span class="keyword">int</span> n;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"\n%s"</span>,s);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">			a[i]=s[i]-<span class="string">'0'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[i]==<span class="number">0</span>)&#123;</span><br><span class="line">				<span class="keyword">if</span>(!b0.empty())&#123;</span><br><span class="line">					a[i]=b0.front();</span><br><span class="line">					b0.pop();</span><br><span class="line">					b1.push(a[i]);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span>&#123;</span><br><span class="line">					++ans;</span><br><span class="line">					a[i]=ans;</span><br><span class="line">					b1.push(ans);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="keyword">if</span>(!b1.empty())&#123;</span><br><span class="line">					a[i]=b1.front();</span><br><span class="line">					b1.pop();</span><br><span class="line">					b0.push(a[i]);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span>&#123;</span><br><span class="line">					++ans;</span><br><span class="line">					a[i]=ans;</span><br><span class="line">					b0.push(ans);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//	freopen("data.in","r",stdin);</span></span><br><span class="line"><span class="comment">//	freopen("test.out","w",stdout);</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/06/CF1399C-Boats-Competition/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/myavatar.jpg">
+      <meta itemprop="name" content="99_wood">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="99_wood's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/06/CF1399C-Boats-Competition/" class="post-title-link" itemprop="url">CF1399C Boats Competition</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-06 18:16:50" itemprop="dateCreated datePublished" datetime="2020-08-06T18:16:50+08:00">2020-08-06</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/08/06/CF1399C-Boats-Competition/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/06/CF1399C-Boats-Competition/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/06/CF1399B-Gifts-Fixing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/myavatar.jpg">
+      <meta itemprop="name" content="99_wood">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="99_wood's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/06/CF1399B-Gifts-Fixing/" class="post-title-link" itemprop="url">CF1399B Gifts Fixing</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-06 18:16:31 / 修改时间：18:56:50" itemprop="dateCreated datePublished" datetime="2020-08-06T18:16:31+08:00">2020-08-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%85%A5%E9%97%A8/" itemprop="url" rel="index"><span itemprop="name">入门</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/08/06/CF1399B-Gifts-Fixing/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/06/CF1399B-Gifts-Fixing/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="CF1399B-Gifts-Fixing"><a href="#CF1399B-Gifts-Fixing" class="headerlink" title="CF1399B Gifts Fixing"></a>CF1399B Gifts Fixing</h1><p>##题目</p>
+<pre><code>B. Gifts Fixing
+time limit per test1 second
+memory limit per test256 megabytes
+inputstandard input
+outputstandard output
+You have n gifts and you want to give all of them to children. Of course, you don&apos;t want to offend anyone, so all gifts should be equal between each other. The i-th gift consists of ai candies and bi oranges.
+
+During one move, you can choose some gift 1≤i≤n and do one of the following operations:
+
+eat exactly one candy from this gift (decrease ai by one);
+eat exactly one orange from this gift (decrease bi by one);
+eat exactly one candy and exactly one orange from this gift (decrease both ai and bi by one).
+Of course, you can not eat a candy or orange if it&apos;s not present in the gift (so neither ai nor bi can become less than zero).
+
+As said above, all gifts should be equal. This means that after some sequence of moves the following two conditions should be satisfied: a1=a2=⋯=an and b1=b2=⋯=bn (and ai equals bi is not necessary).
+
+Your task is to find the minimum number of moves required to equalize all the given gifts.
+
+You have to answer t independent test cases.
+
+Input
+The first line of the input contains one integer t (1≤t≤1000) — the number of test cases. Then t test cases follow.
+
+The first line of the test case contains one integer n (1≤n≤50) — the number of gifts. The second line of the test case contains n integers a1,a2,…,an (1≤ai≤109), where ai is the number of candies in the i-th gift. The third line of the test case contains n integers b1,b2,…,bn (1≤bi≤109), where bi is the number of oranges in the i-th gift.
+
+Output
+For each test case, print one integer: the minimum number of moves required to equalize all the given gifts.
+
+Example
+input
+5
+3
+3 5 6
+3 2 3
+5
+1 2 3 4 5
+5 4 3 2 1
+3
+1 1 1
+2 2 2
+6
+1 1000000000 1000000000 1000000000 1000000000 1000000000
+1 1 1 1 1 1
+3
+10 12 8
+7 5 4
+output
+6
+16
+0
+4999999995
+7
+Note
+In the first test case of the example, we can perform the following sequence of moves:
+
+choose the first gift and eat one orange from it, so a=[3,5,6] and b=[2,2,3];
+choose the second gift and eat one candy from it, so a=[3,4,6] and b=[2,2,3];
+choose the second gift and eat one candy from it, so a=[3,3,6] and b=[2,2,3];
+choose the third gift and eat one candy and one orange from it, so a=[3,3,5] and b=[2,2,2];
+choose the third gift and eat one candy from it, so a=[3,3,4] and b=[2,2,2];
+choose the third gift and eat one candy from it, so a=[3,3,3] and b=[2,2,2].</code></pre><h2 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h2><p><a href="https://fanyi.baidu.com/?aldtype=16047#en/zh/A.%20Remove%20Smallest%0Atime%20limit%20per%20test1%20second%0Amemory%20limit%20per%20test256%20megabytes%0Ainputstandard%20input%0Aoutputstandard%20output%0AYou%20are%20given%20the%20array%20a%20consisting%20of%20n%20positive%20(greater%20than%20zero)%20integers.%0A%0AIn%20one%20move%2C%20you%20can%20choose%20two%20indices%20i%20and%20j%20(i%E2%89%A0j)%20such%20that%20the%20absolute%20difference%20between%20ai%20and%20aj%20is%20no%20more%20than%20one%20(%7Cai%E2%88%92aj%7C%E2%89%A41)%20and%20remove%20the%20smallest%20of%20these%20two%20elements.%20If%20two%20elements%20are%20equal%2C%20you%20can%20remove%20any%20of%20them%20(but%20exactly%20one).%0A%0AYour%20task%20is%20to%20find%20if%20it%20is%20possible%20to%20obtain%20the%20array%20consisting%20of%20only%20one%20element%20using%20several%20(possibly%2C%20zero)%20such%20moves%20or%20not.%0A%0AYou%20have%20to%20answer%20t%20independent%20test%20cases.%0A%0AInput%0AThe%20first%20line%20of%20the%20input%20contains%20one%20integer%20t%20(1%E2%89%A4t%E2%89%A41000)%20%E2%80%94%20the%20number%20of%20test%20cases.%20Then%20t%20test%20cases%20follow.%0A%0AThe%20first%20line%20of%20the%20test%20case%20contains%20one%20integer%20n%20(1%E2%89%A4n%E2%89%A450)%20%E2%80%94%20the%20length%20of%20a.%20The%20second%20line%20of%20the%20test%20case%20contains%20n%20integers%20a1%2Ca2%2C%E2%80%A6%2Can%20(1%E2%89%A4ai%E2%89%A4100)%2C%20where%20ai%20is%20the%20i-th%20element%20of%20a.%0A%0AOutput%0AFor%20each%20test%20case%2C%20print%20the%20answer%3A%20%22YES%22%20if%20it%20is%20possible%20to%20obtain%20the%20array%20consisting%20of%20only%20one%20element%20using%20several%20(possibly%2C%20zero)%20moves%20described%20in%20the%20problem%20statement%2C%20or%20%22NO%22%20otherwise." target="_blank" rel="noopener">百度翻译结果</a></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p><strong><del>自己想</del></strong></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100</span>];</span><br><span class="line"><span class="keyword">int</span> b[<span class="number">100</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">	<span class="keyword">while</span>(t--)&#123;</span><br><span class="line">		<span class="keyword">int</span> n;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">		<span class="keyword">int</span> mina=<span class="number">1000000010</span>,minb=<span class="number">1000000010</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">			<span class="keyword">if</span>(a[i]&lt;mina)mina=a[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b[i]);</span><br><span class="line">			<span class="keyword">if</span>(b[i]&lt;minb)minb=b[i];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> con=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">			<span class="keyword">int</span> x=a[i]-mina,y=b[i]-minb;</span><br><span class="line">			con+=max(x,y);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%I64d\n"</span>,con);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//	freopen("data.in","r",stdin);</span></span><br><span class="line"><span class="comment">//	freopen("test.out","w",stdout);</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/06/CF1399A-Remove-Smallest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/myavatar.jpg">
+      <meta itemprop="name" content="99_wood">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="99_wood's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/06/CF1399A-Remove-Smallest/" class="post-title-link" itemprop="url">CF1399A Remove Smallest</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-06 18:16:06 / 修改时间：18:50:13" itemprop="dateCreated datePublished" datetime="2020-08-06T18:16:06+08:00">2020-08-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%85%A5%E9%97%A8/" itemprop="url" rel="index"><span itemprop="name">入门</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/08/06/CF1399A-Remove-Smallest/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/08/06/CF1399A-Remove-Smallest/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="CF1399A-Remove-Smallest"><a href="#CF1399A-Remove-Smallest" class="headerlink" title="CF1399A Remove Smallest"></a>CF1399A Remove Smallest</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><h3 id="A-Remove-Smallest"><a href="#A-Remove-Smallest" class="headerlink" title="A. Remove Smallest"></a>A. Remove Smallest</h3><p><strong><em>time limit per test:1 second</em></strong></p>
+<p><strong><em>memory limit per test:256 megabytes</em></strong></p>
+<p><strong><em>input:standard input</em></strong></p>
+<p><strong><em>output:standard output</em></strong></p>
+<p>You are given the array a consisting of n positive (greater than zero) integers.</p>
+<p>In one move, you can choose two indices i and j (i≠j) such that the absolute difference between ai and aj is no more than one (|ai−aj|≤1) and remove the smallest of these two elements. If two elements are equal, you can remove any of them (but exactly one).</p>
+<p>Your task is to find if it is possible to obtain the array consisting of only one element using several (possibly, zero) such moves or not.</p>
+<p>You have to answer t independent test cases.</p>
+<h4 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h4><p>The first line of the input contains one integer t (1≤t≤1000) — the number of test cases. Then t test cases follow.</p>
+<p>The first line of the test case contains one integer n (1≤n≤50) — the length of a. The second line of the test case contains n integers a1,a2,…,an (1≤ai≤100), where ai is the i-th element of a.</p>
+<h4 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h4><p>For each test case, print the answer: “YES” if it is possible to obtain the array consisting of only one element using several (possibly, zero) moves described in the problem statement, or “NO” otherwise.</p>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><p><strong>input</strong></p>
+<p>5<br>3<br>1 2 2<br>4<br>5 5 5 5<br>3<br>1 2 4<br>4<br>1 3 4 4<br>1<br>100</p>
+<p><strong>output</strong></p>
+<p>YES<br>YES<br>NO<br>NO<br>YES</p>
+<h4 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h4><p>In the first test case of the example, we can perform the following sequence of moves:</p>
+<p>choose i=1 and j=3 and remove ai (so a becomes [2;2]);<br>choose i=1 and j=2 and remove aj (so a becomes [2]).<br>In the second test case of the example, we can choose any possible i and j any move and it doesn’t matter which element we remove.</p>
+<p>In the third test case of the example, there is no way to get rid of 2 and 4.</p>
+<h2 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h2><p><a href="https://fanyi.baidu.com/?aldtype=16047#en/zh/A.%20Remove%20Smallest%0Atime%20limit%20per%20test1%20second%0Amemory%20limit%20per%20test256%20megabytes%0Ainputstandard%20input%0Aoutputstandard%20output%0AYou%20are%20given%20the%20array%20a%20consisting%20of%20n%20positive%20(greater%20than%20zero)%20integers.%0A%0AIn%20one%20move%2C%20you%20can%20choose%20two%20indices%20i%20and%20j%20(i%E2%89%A0j)%20such%20that%20the%20absolute%20difference%20between%20ai%20and%20aj%20is%20no%20more%20than%20one%20(%7Cai%E2%88%92aj%7C%E2%89%A41)%20and%20remove%20the%20smallest%20of%20these%20two%20elements.%20If%20two%20elements%20are%20equal%2C%20you%20can%20remove%20any%20of%20them%20(but%20exactly%20one).%0A%0AYour%20task%20is%20to%20find%20if%20it%20is%20possible%20to%20obtain%20the%20array%20consisting%20of%20only%20one%20element%20using%20several%20(possibly%2C%20zero)%20such%20moves%20or%20not.%0A%0AYou%20have%20to%20answer%20t%20independent%20test%20cases.%0A%0AInput%0AThe%20first%20line%20of%20the%20input%20contains%20one%20integer%20t%20(1%E2%89%A4t%E2%89%A41000)%20%E2%80%94%20the%20number%20of%20test%20cases.%20Then%20t%20test%20cases%20follow.%0A%0AThe%20first%20line%20of%20the%20test%20case%20contains%20one%20integer%20n%20(1%E2%89%A4n%E2%89%A450)%20%E2%80%94%20the%20length%20of%20a.%20The%20second%20line%20of%20the%20test%20case%20contains%20n%20integers%20a1%2Ca2%2C%E2%80%A6%2Can%20(1%E2%89%A4ai%E2%89%A4100)%2C%20where%20ai%20is%20the%20i-th%20element%20of%20a.%0A%0AOutput%0AFor%20each%20test%20case%2C%20print%20the%20answer%3A%20%22YES%22%20if%20it%20is%20possible%20to%20obtain%20the%20array%20consisting%20of%20only%20one%20element%20using%20several%20(possibly%2C%20zero)%20moves%20described%20in%20the%20problem%20statement%2C%20or%20%22NO%22%20otherwise." target="_blank" rel="noopener">百度翻译结果</a></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p><strong>自己想</strong></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">	<span class="keyword">while</span>(t--)&#123;</span><br><span class="line">		<span class="keyword">int</span> n;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		sort(a,a+n);</span><br><span class="line">		<span class="keyword">bool</span> flag=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;++i)&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[i]-a[i<span class="number">-1</span>]&gt;<span class="number">1</span>)&#123;</span><br><span class="line">				flag=<span class="literal">false</span>;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"NO\n"</span>);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(flag)&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"YES\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//	freopen("data.in","r",stdin);</span></span><br><span class="line"><span class="comment">//	freopen("test.out","w",stdout);</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/06/Codeforces-Round-661-Div-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -275,7 +728,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-05 10:54:06" itemprop="dateModified" datetime="2020-08-05T10:54:06+08:00">2020-08-05</time>
+                <time title="修改时间：2020-08-06 19:02:21" itemprop="dateModified" datetime="2020-08-06T19:02:21+08:00">2020-08-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -616,20 +1069,20 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
